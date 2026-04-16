@@ -1,6 +1,6 @@
 <template>
-  <div class="rag-visualizer-wrapper">
-    <div class="app">
+  <div class="rag-visualizer-wrapper" :class="{ 'white-bg': isWhiteBg }">
+    <div class="app" :class="{ 'white-bg': isWhiteBg }">
       <!-- ═══ TOPBAR ═══ -->
       <header class="topbar">
         <div class="topbar-logo">
@@ -15,6 +15,10 @@
         <button @click="startAutoTrace" class="auto-trace-btn">▶ 自动演示</button>
         <div class="topbar-sep"></div>
         <div class="topbar-badge">模拟演示</div>
+        <button class="toggle-bg-btn" @click="toggleBg" :title="isWhiteBg ? '切换为默认背景' : '切换为白色背景'">
+          <svg v-if="!isWhiteBg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg v-else width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
       </header>
 
       <!-- ═══ SIDEBAR ═══ -->
@@ -951,6 +955,7 @@ export default {
   data() {
     return {
       currentStage: 0,
+      isWhiteBg: false,
       globalQuery: '太和殿有多高，有哪些历史典故？',
       selChunk: 'fixed',
       selEmbed: 'te3s',
@@ -1460,6 +1465,9 @@ export default {
     }
   },
   methods: {
+    toggleBg() {
+      this.isWhiteBg = !this.isWhiteBg;
+    },
     getState() {
       return {
         chunk: this.selChunk,
@@ -3042,6 +3050,144 @@ export default {
   font-family: 'Syne', sans-serif;
 }
 
+.app.white-bg {
+  background: #ffffff;
+}
+
+.app.white-bg .topbar {
+  background: #f5f5f5;
+}
+
+.app.white-bg .sidebar {
+  background: #fafafa;
+}
+
+.app.white-bg .pipeline-overview {
+  background: #f5f5f5;
+}
+
+/* ═══ WHITE THEME ═══ */
+.rag-visualizer-wrapper.white-bg {
+  --bg: #ffffff;
+  --bg2: #f5f5f5;
+  --bg3: #ebebeb;
+  --bg4: #dcdcdc;
+  --border: rgba(0, 0, 0, 0.08);
+  --border2: rgba(0, 0, 0, 0.12);
+}
+
+.rag-visualizer-wrapper.white-bg .app {
+  background: #ffffff;
+}
+
+.rag-visualizer-wrapper.white-bg .topbar {
+  background: #f5f5f5;
+}
+
+.rag-visualizer-wrapper.white-bg .sidebar {
+  background: #f5f5f5;
+}
+
+.rag-visualizer-wrapper.white-bg .main {
+  background: #ffffff;
+}
+
+.rag-visualizer-wrapper.white-bg .topbar-badge {
+  background: #e0e0e0;
+}
+
+.rag-visualizer-wrapper.white-bg .query-bar {
+  background: #ebebeb;
+}
+
+.rag-visualizer-wrapper.white-bg .query-bar input {
+  background: #ffffff;
+}
+
+.rag-visualizer-wrapper.white-bg .stage-nav-item:hover {
+  background: #ebebeb;
+}
+
+.rag-visualizer-wrapper.white-bg .tech-select {
+  background: #ebebeb;
+}
+
+.rag-visualizer-wrapper.white-bg .tech-select option {
+  background: #f5f5f5;
+}
+
+.rag-visualizer-wrapper.white-bg .io-card {
+  background: #f5f5f5;
+}
+
+.rag-visualizer-wrapper.white-bg .io-card-head {
+  background: #ebebeb;
+}
+
+.rag-visualizer-wrapper.white-bg .io-type-badge {
+  background: #dcdcdc;
+}
+
+.rag-visualizer-wrapper.white-bg .io-body::-webkit-scrollbar-thumb {
+  background: #dcdcdc;
+}
+
+.rag-visualizer-wrapper.white-bg .section-card {
+  background: #f5f5f5;
+}
+
+.rag-visualizer-wrapper.white-bg .chunk-item {
+  background: #ebebeb;
+}
+
+.rag-visualizer-wrapper.white-bg .metric-mini-badge {
+  background: #dcdcdc;
+}
+
+.rag-visualizer-wrapper.white-bg .index-canvas-wrap {
+  background: #ebebeb;
+}
+
+.rag-visualizer-wrapper.white-bg .result-item {
+  background: #ebebeb;
+}
+
+.rag-visualizer-wrapper.white-bg .result-item:hover {
+  background: #dcdcdc;
+}
+
+.rag-visualizer-wrapper.white-bg .score-bar-bg {
+  background: #dcdcdc;
+}
+
+.rag-visualizer-wrapper.white-bg .prompt-builder {
+  background: #f5f5f5;
+}
+
+.rag-visualizer-wrapper.white-bg .prompt-tabs {
+  background: #ebebeb;
+}
+
+.rag-visualizer-wrapper.white-bg .final-answer {
+  background: #f5f5f5;
+}
+
+.rag-visualizer-wrapper.white-bg .pipeline-overview {
+  background: #f5f5f5;
+}
+
+.rag-visualizer-wrapper.white-bg .pipe-step:hover {
+  background: #ebebeb;
+}
+
+.rag-visualizer-wrapper.white-bg .metric-card {
+  background: #f5f5f5;
+}
+
+.rag-visualizer-wrapper.white-bg .dot {
+  background: #ede8df;
+}
+
 .topbar {
   grid-column: 1/-1;
   background: #ede8df;
@@ -3091,6 +3237,31 @@ export default {
   border: 1px solid rgba(0, 0, 0, 0.08);
   padding: 4px 10px;
   border-radius: 4px;
+}
+
+.app.white-bg .topbar-badge {
+  background: #e8e8e8;
+}
+
+.toggle-bg-btn {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  color: #5a5a5a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.toggle-bg-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: #3d3d3d;
 }
 
 .query-bar {
