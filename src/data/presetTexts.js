@@ -1,0 +1,15 @@
+export const PRESET_TEXTS = [
+  {text: '太和殿高35.05米，是故宫最高的殿宇', cluster: '建筑结构', color: '#3b82f6', px: 0.30, py: 0.32},
+  {text: '故宫共有宫殿七十余座、房屋九千余间', cluster: '建筑结构', color: '#3b82f6', px: 0.26, py: 0.40},
+  {text: '整体布局坐北朝南，沿中轴线排列', cluster: '建筑结构', color: '#3b82f6', px: 0.35, py: 0.28},
+  {text: '故宫始建于明朝永乐四年（1406年）', cluster: '历史沿革', color: '#8b5cf6', px: 0.62, py: 0.50},
+  {text: '清代皇帝在此处理政务近三百年', cluster: '历史沿革', color: '#8b5cf6', px: 0.66, py: 0.44},
+  {text: '1420年建成时称紫禁城', cluster: '历史沿革', color: '#8b5cf6', px: 0.58, py: 0.56},
+  {text: '故宫博物院收藏文物超过180万件', cluster: '文物收藏', color: '#10b981', px: 0.25, py: 0.68},
+  {text: '馆藏包括陶瓷、书画、青铜器等珍贵文物', cluster: '文物收藏', color: '#10b981', px: 0.20, py: 0.62},
+  {text: '一级文物6万余件，是中国最重要的博物馆', cluster: '文物收藏', color: '#10b981', px: 0.30, py: 0.74},
+  {text: '太和殿是皇帝举行登基大典的场所', cluster: '宫殿典礼', color: '#f59e0b', px: 0.70, py: 0.25},
+  {text: '皇帝每年在此颁发重要诏书', cluster: '宫殿典礼', color: '#f59e0b', px: 0.75, py: 0.31},
+  {text: '苹果公司发布了新款 iPhone 手机', cluster: '⚡ 无关', color: '#4a5568', px: 0.85, py: 0.82},
+  {text: '今天北京的天气预报是晴转多云', cluster: '⚡ 无关', color: '#4a5568', px: 0.80, py: 0.88},
+];
